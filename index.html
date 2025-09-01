@@ -30,12 +30,28 @@
             margin: 0;
             font-family: 'Montserrat', sans-serif;
             font-size: 2.5em;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        header h1.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         header p {
             margin-top: 10px;
             font-size: 1.1em;
             color: #b0b0b0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out 0.2s, transform 1s ease-out 0.2s;
+        }
+
+        header p.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         main {
@@ -53,7 +69,14 @@
             width: 320px;
             padding: 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s, opacity 1s ease-out, transform 1s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .card:hover {
@@ -140,8 +163,35 @@
         <a href="projects/led_switch.html">View Project</a>
     </div>
 
-    <!-- Add more project cards here -->
 </main>
+
+<script>
+    // Animate header
+    window.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('header h1').classList.add('visible');
+        document.querySelector('header p').classList.add('visible');
+    });
+
+    // Animate cards on scroll
+    const cards = document.querySelectorAll('.card');
+
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+</script>
 
 </body>
 </html>
