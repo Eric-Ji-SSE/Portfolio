@@ -8,13 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
 
     <style>
-        img.small-img {
-            max-width: 600px;  /* adjust to fit layout */
-            width: 100%;
-            height: auto;      /* maintain aspect ratio */
-            display: block;
-            margin: 20px auto; /* centers the image */
-}
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #121212;
@@ -50,10 +43,21 @@
             margin: auto;
         }
 
-        img {
+        img.small-img {
+            max-width: 600px;
             width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        video {
+            max-width: 100%;
+            height: auto;
             border-radius: 8px;
             margin: 20px 0;
+            display: block;
         }
 
         h2 { color: #ffffff; margin-top: 30px; }
@@ -92,7 +96,7 @@
 
 <main>
     <img class="small-img" src="../images/rc_car_full.jpg" alt="Finished RC Car Image">
-    <img src="../images/rc_car_pcb.JPG" alt="RC Car PCB Layout">
+    <img class="small-img" src="../images/rc_car_pcb.JPG" alt="RC Car PCB Layout">
     <img class="small-img" src="../images/rc_car_chassis.jpg" alt="3D Printed Chassis">
 
     <h2>Overview</h2>
@@ -132,6 +136,12 @@
         <li>Integration of multiple systems: electronics, mechanical design, and wireless control</li>
         <li>Iterative testing and problem-solving in both hardware and software domains</li>
     </ul>
+
+    <h2>Project Demo Video</h2>
+    <video controls>
+        <source src="../videos/rc_car_demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <h2>Files</h2>
     <a class="button" href="../files/rc_car_project.zip">Download Files</a>
