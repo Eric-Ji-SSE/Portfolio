@@ -119,9 +119,18 @@
     </p>
 
     <p>
-        The PCB itself is a <strong>four-layer design</strong> with dedicated power and ground planes for signal integrity. The compact layout
-        reduces interference and simplifies assembly, with <strong>test points</strong> included for debugging.
+        The PCB itself is a <strong>four-layer design</strong> with dedicated power and ground planes to maintain <strong>signal integrity</strong> and minimize electromagnetic interference (EMI). 
+        Test points are included to monitor signals and aid debugging. <strong>ESD protection components</strong> (e.g., TVS diodes) were placed near the USB and I/O interfaces 
+        to protect the microcontroller and sensors from voltage spikes, highlighting the importance of robust hardware design for real-world IoT devices.
     </p>
+
+    <h2>What I Learned</h2>
+    <ul>
+        <li><strong>Signal Integrity:</strong> Understanding return paths, controlled impedance, and careful layout to prevent noise or reflections for high-speed signals.</li>
+        <li><strong>ESD Protection:</strong> Strategic placement of protection components at external interfaces to prevent damage from voltage spikes.</li>
+        <li><strong>PCB Stackup Decisions:</strong> Choosing between GND–PWR vs GND–GND layers and their impact on RF performance and EMI.</li>
+        <li><strong>System Integration:</strong> Coordinating power, sensors, MCU, and communication protocols for reliable IoT operation.</li>
+    </ul>
 
     <h2>Summary of Features</h2>
     <ul>
