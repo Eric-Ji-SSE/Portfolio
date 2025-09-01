@@ -43,10 +43,17 @@
             margin: auto;
         }
 
-        img {
-            width: 100%;
+        /* Images */
+        img.small-img {
+            width: auto;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
             border-radius: 8px;
-            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
 
         h2 { color: #ffffff; margin-top: 30px; }
@@ -69,6 +76,12 @@
         a.button:hover {
             background-color: #388e3c;
         }
+
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
     </style>
 </head>
 <body>
@@ -79,23 +92,24 @@
 </header>
 
 <main>
-    <img src="../images/PSL.JPG" alt="Breadboard Power Supply Image">
-    <img src="../images/PS3D.jpg" alt="Breadboard Power Supply 3D Image">
+    <img class="small-img" src="../images/PSL.JPG" alt="Breadboard Power Supply Image">
+    <img class="small-img" src="../images/PS3D.jpg" alt="Breadboard Power Supply 3D Image">
 
     <h2>Overview</h2>
     <p>
-        This breadboard power supply provides regulated **5V and 3.3V outputs** from a 6–12V DC input. 
-        It is designed for easy connection to standard breadboards, providing reliable voltagefor small electronic projects.
+        This breadboard power supply provides regulated <strong>5V and 3.3V outputs</strong> from a 6–12V DC input. 
+        It is designed for easy connection to standard breadboards, providing reliable voltage for small electronic projects.
     </p>
 
     <h2>Project Details</h2>
     <p>
-        The **5V output** uses an <strong>LM7805 linear regulator</strong> with input and output capacitors for stability, while the **3.3V output** is generated using an adjustable <strong>LM317 regulator</strong> with resistors setting the voltage to 3.3V. 
+        The <strong>5V output</strong> uses an LM7805 linear regulator with input and output capacitors for stability, 
+        while the <strong>3.3V output</strong> is generated using an adjustable LM317 regulator with resistors setting the voltage to 3.3V. 
         A <strong>power LED</strong> indicates when input power is present.  
     </p>
 
     <p>
-        The outputs are selectable via jumpers or connectors for use with **breadboards, jumper wires, or screw terminals**, allowing flexible prototyping setups. 
+        The outputs are selectable via jumpers or connectors for use with <strong>breadboards, jumper wires, or screw terminals</strong>, allowing flexible prototyping setups. 
     </p>
 
     <h2>What I Learned</h2>
@@ -122,4 +136,20 @@
     <p><a class="button" href="../index.html">← Back to Home</a></p>
 </main>
 
+<script>
+    // Fade-in animation on scroll
+    const fadeElements = document.querySelectorAll('img.small-img');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(el => observer.observe(el));
+</script>
+
 </body>
+</html>
