@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PROJECT NAME</title>
+    <title>ESP32 IoT PCB</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
@@ -53,6 +53,8 @@
 
         p { line-height: 1.5; color: #cccccc; }
 
+        ul { line-height: 1.6; color: #cccccc; }
+
         a.button {
             display: inline-block;
             margin-top: 20px;
@@ -72,18 +74,68 @@
 <body>
 
 <header>
-    <h1>PROJECT NAME</h1>
-    <p>Project Details</p>
+    <h1>ESP32 IoT PCB</h1>
+    <p>This custom IoT development board showcases the power of KiCad 9 RC1 and creates a versatile platform for real-world IoT projects.</p>
 </header>
 
 <main>
-    <img src="../images/IMAGE_FILE.jpg" alt="PROJECT NAME Image">
+    <img src="../images/esp32_iot_pcb.jpg" alt="ESP32 IoT PCB Image">
 
     <h2>Overview</h2>
-    <p>Write a detailed description of the project here. Include your goals, challenges, and what technologies or components you used.</p>
+    <p>
+        At its heart is the <strong>ESP32-C3 microcontroller</strong>, which offers Wi-Fi and BLE connectivity along with impressive processing power.
+        It’s compact, efficient, and ready for your next IoT application.
+    </p>
+
+    <h2>Project Details</h2>
+    <p>
+        The board supports multiple power options. It can be powered via a <strong>USB-C connector</strong> (which also handles data transfer)
+        or a <strong>LiPo battery</strong> for portable setups. A dedicated <strong>battery management circuit</strong> ensures safe charging
+        and discharging. Built-in <strong>3.3V and 5V regulators</strong> provide stable voltage rails.
+    </p>
+
+    <p>
+        For storage, the board includes a <strong>microSD card slot</strong> for local data logging and <strong>SPI flash memory</strong>
+        for storing configuration files, sensor data, or firmware updates.
+    </p>
+
+    <p>
+        The board integrates several sensors for environmental and audio monitoring:
+    </p>
+    <ul>
+        <li><strong>BME280</strong> for temperature, humidity, and pressure</li>
+        <li><strong>Ambient light sensor</strong> for illumination monitoring</li>
+        <li><strong>Microphone with pre-amplifier</strong> for sound capture</li>
+    </ul>
+
+    <p>
+        Connectivity is supported through <strong>I²C and SPI interfaces</strong>, making it compatible with a wide range of devices and peripherals.
+        A <strong>USB-to-UART bridge</strong> simplifies programming and debugging.
+    </p>
+
+    <p>
+        The user interface includes <strong>boot and reset buttons</strong>, a <strong>GPIO header</strong> for external connections,
+        and <strong>status LEDs</strong> for power, charging, and operation.
+    </p>
+
+    <p>
+        The PCB itself is a <strong>four-layer design</strong> with dedicated power and ground planes for signal integrity. The compact layout
+        reduces interference and simplifies assembly, with <strong>test points</strong> included for debugging.
+    </p>
+
+    <h2>Summary of Features</h2>
+    <ul>
+        <li><strong>Microcontroller:</strong> ESP32-C3 with Wi-Fi and BLE</li>
+        <li><strong>Power:</strong> USB-C input, LiPo battery connector, onboard 3.3V & 5V regulation</li>
+        <li><strong>Storage:</strong> MicroSD card slot, SPI flash memory</li>
+        <li><strong>Sensors:</strong> BME280 (environment), ambient light, microphone + pre-amplifier</li>
+        <li><strong>Interfaces:</strong> I²C, SPI, USB-to-UART bridge</li>
+        <li><strong>User Interaction:</strong> Boot/reset buttons, GPIO header, status LEDs</li>
+        <li><strong>Design:</strong> 4-layer PCB, optimized layout, test points for debugging</li>
+    </ul>
 
     <h2>Files</h2>
-    <a class="button" href="../files/FILE_NAME.zip">Download Files</a>
+    <a class="button" href="../files/esp32_iot_pcb_files.zip">Download Files</a>
 
     <p><a class="button" href="../index.html">← Back to Home</a></p>
 </main>
