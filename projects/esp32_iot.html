@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ESP32 IoT PCB</title>
+    <title>Breadboard Power Supply</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
@@ -74,79 +74,51 @@
 <body>
 
 <header>
-    <h1>ESP32 IoT PCB</h1>
-    <p>An IoT board powered by the ESP32-C3, designed for wireless sensing, data logging, and IoT applications.</p>
+    <h1>Breadboard Power Supply</h1>
+    <p>A dual-output 5V/3.3V power supply for breadboard prototyping with LEDs and protection circuits.</p>
 </header>
 
 <main>
-    <img src="../images/ESP32_3D.jpg" alt="ESP32 IoT PCB Image">
-    <img src="../images/ESP32_layout.JPG" alt="ESP32 IoT layout Image">
+    <img src="../images/breadboard_psu.jpg" alt="Breadboard Power Supply Image">
 
     <h2>Overview</h2>
     <p>
-        At its heart is the <strong>ESP32-C3 microcontroller</strong>, which offers Wi-Fi and BLE connectivity along with impressive processing power.
-        It’s compact, efficient, and ready for your next IoT application.
+        This breadboard power supply provides regulated **5V and 3.3V outputs** from a 6–12V DC input. 
+        It is designed for easy connection to standard breadboards, providing **reliable voltage, power indication, and output protection** for small electronic projects.
     </p>
 
     <h2>Project Details</h2>
     <p>
-        The board supports multiple power options. It can be powered via a <strong>USB-C connector</strong> (which also handles data transfer)
-        or a <strong>LiPo battery</strong> for portable setups. A dedicated <strong>battery management circuit</strong> ensures safe charging
-        and discharging. Built-in <strong>3.3V and 5V regulators</strong> provide stable voltage rails.
+        The **5V output** uses an <strong>LM7805 linear regulator</strong> with input and output capacitors for stability, while the **3.3V output** is generated using an adjustable <strong>LM317 regulator</strong> with resistors setting the voltage to 3.3V. 
+        A <strong>power LED</strong> indicates when input power is present.  
     </p>
 
     <p>
-        For storage, the board includes a <strong>microSD card slot</strong> for local data logging and <strong>SPI flash memory</strong>
-        for storing configuration files, sensor data, or firmware updates.
-    </p>
-
-    <p>
-        The board integrates several sensors for environmental and audio monitoring:
-    </p>
-    <ul>
-        <li><strong>BME280</strong> for temperature, humidity, and pressure</li>
-        <li><strong>Ambient light sensor</strong> for illumination monitoring</li>
-        <li><strong>Microphone with pre-amplifier</strong> for sound capture</li>
-    </ul>
-
-    <p>
-        Connectivity is supported through <strong>I²C and SPI interfaces</strong>, making it compatible with a wide range of devices and peripherals.
-        A <strong>USB-to-UART bridge</strong> simplifies programming and debugging.
-    </p>
-
-    <p>
-        The user interface includes <strong>boot and reset buttons</strong>, a <strong>GPIO header</strong> for external connections,
-        and <strong>status LEDs</strong> for power, charging, and operation.
-    </p>
-
-    <p>
-        The PCB itself is a <strong>four-layer design</strong> with dedicated power and ground planes to maintain <strong>signal integrity</strong> and minimize electromagnetic interference (EMI). 
-        Test points are included to monitor signals and aid debugging. <strong>ESD protection components</strong> (e.g., TVS diodes) were placed near the USB and I/O interfaces 
-        to protect the microcontroller and sensors from voltage spikes, highlighting the importance of robust hardware design for real-world IoT devices.
+        The outputs are selectable via jumpers or connectors for use with **breadboards, jumper wires, or screw terminals**, allowing flexible prototyping setups. 
+        Short-circuit protection is implemented through careful regulator choice and design.
     </p>
 
     <h2>What I Learned</h2>
     <ul>
-        <li><strong>Signal Integrity:</strong> Understanding return paths, controlled impedance, and careful layout to prevent noise or reflections for high-speed signals.</li>
-        <li><strong>ESD Protection:</strong> Learned how to protect the board from voltage spikes by adding ESD protection.</li>
-        <li><strong>PCB Stackup Decisions:</strong> Gained experience designing the PCB stackup for high-speed signals, understanding that placing ground planes close to signal layers improves return paths, reduces noise, and minimizes EMI.</li>
+        <li><strong>Voltage Regulation:</strong> Implementing stable 5V and 3.3V outputs using LM7805 and LM317 regulators.</li>
+        <li><strong>Power Indication:</strong> Adding LEDs to show input power and output status for improved usability.</li>
+        <li><strong>Output Flexibility:</strong> Designing selectable outputs for breadboards, jumper wires, or terminals.</li>
+        <li><strong>Protection:</strong> Understanding how to include thermal and short-circuit protection through regulator choice and layout.</li>
     </ul>
 
     <h2>Summary of Features</h2>
     <ul>
-        <li><strong>Microcontroller:</strong> ESP32-C3 with Wi-Fi and BLE</li>
-        <li><strong>Power:</strong> USB-C input, LiPo battery connector, onboard 3.3V & 5V regulation</li>
-        <li><strong>Storage:</strong> MicroSD card slot, SPI flash memory</li>
-        <li><strong>Sensors:</strong> BME280 (environment), ambient light, microphone + pre-amplifier</li>
-        <li><strong>Interfaces:</strong> I²C, SPI, USB-to-UART bridge</li>
-        <li><strong>User Interaction:</strong> Boot/reset buttons, GPIO header, status LEDs</li>
-        <li><strong>Design:</strong> 4-layer PCB, optimized layout, test points for debugging</li>
+        <li>Input: 6–12V DC</li>
+        <li>Outputs: 5V regulated, 3.3V regulated</li>
+        <li>Indicators: Power LED for input</li>
+        <li>Selectable Outputs: Breadboard, jumper wires, screw terminals</li>
+        <li>Protection: Linear regulator-based short-circuit and thermal protection</li>
+        <li>Compact design for breadboard compatibility</li>
     </ul>
 
     <h2>Files</h2>
-    <p>ESP32-IoT-PCB.zip</p>
-    <p>Zip contains project file, schematic file, and PCB file</p>
-    <a class="button" href="../files/ESP32-IoT-PCB.zip">Download Files</a>
+    <a class="button" href="../files/breadboard_psu_files.zip">Download Files</a>
+
     <p><a class="button" href="../index.html">← Back to Home</a></p>
 </main>
 
