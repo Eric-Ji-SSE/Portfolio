@@ -43,10 +43,17 @@
             margin: auto;
         }
 
-        img {
-            width: 100%;
+        /* Images */
+        img.small-img {
+            width: auto;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
             border-radius: 8px;
-            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
 
         h2 { color: #ffffff; margin-top: 30px; }
@@ -69,6 +76,12 @@
         a.button:hover {
             background-color: #388e3c;
         }
+
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
     </style>
 </head>
 <body>
@@ -79,12 +92,13 @@
 </header>
 
 <main>
-    <img src="../images/ESP32_3D.jpg" alt="ESP32 IoT PCB Image">
-    <img src="../images/ESP32_layout.JPG" alt="ESP32 IoT layout Image">
+    <img class="small-img" src="../images/ESP32_3D.jpg" alt="ESP32 IoT PCB Image">
+    <img class="small-img" src="../images/ESP32_layout.JPG" alt="ESP32 IoT layout Image">
 
     <h2>Overview</h2>
     <p>
         A compact IoT development board powered by the ESP32-C3, designed for wireless sensing, data logging, and IoT applications.
+    </p>
 
     <h2>Project Details</h2>
     <p>
@@ -148,6 +162,21 @@
 
     <p><a class="button" href="../index.html">← Back to Home</a></p>
 </main>
+
+<script>
+    // Fade-in animation on scroll
+    const fadeElements = document.querySelectorAll('img.small-img');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
