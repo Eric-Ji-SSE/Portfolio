@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PROJECT NAME</title>
+    <title>RC Car Project</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
 
         main {
             padding: 40px 20px;
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
         }
 
@@ -51,7 +51,13 @@
 
         h2 { color: #ffffff; margin-top: 30px; }
 
-        p { line-height: 1.5; color: #cccccc; }
+        p { line-height: 1.6; color: #cccccc; }
+
+        ul {
+            margin: 10px 0 20px 20px;
+            color: #cccccc;
+            line-height: 1.6;
+        }
 
         a.button {
             display: inline-block;
@@ -72,18 +78,53 @@
 <body>
 
 <header>
-    <h1>PROJECT NAME</h1>
-    <p>Project Details</p>
+    <h1>RC Car Project</h1>
+    <p>Custom-built 3D printed RC car with a fully designed PCB, SolidWorks chassis, and embedded control system</p>
 </header>
 
 <main>
-    <img src="../images/IMAGE_FILE.jpg" alt="PROJECT NAME Image">
+    <img src="../images/rc_car_full.jpg" alt="Finished RC Car Image">
+    <img src="../images/rc_car_pcb.jpg" alt="RC Car PCB Layout">
+    <img src="../images/rc_car_chassis.jpg" alt="3D Printed Chassis">
 
     <h2>Overview</h2>
-    <p>Write a detailed description of the project here. Include your goals, challenges, and what technologies or components you used.</p>
+    <p>
+        This project involved designing and building a fully custom remote-controlled (RC) car. 
+        The goal was to create a lightweight, stable, and high-performance vehicle while 
+        integrating electronics on a custom PCB. The chassis and controller housing were 
+        designed in <strong>SolidWorks</strong> and fabricated with 3D printing, combining 
+        mechanical design and electrical engineering into one system.
+    </p>
+
+    <h2>Key Features</h2>
+    <ul>
+        <li><strong>Microcontroller:</strong> AVR128DB28 (responsible for motor control, wireless communication, and logic)</li>
+        <li><strong>Motor Driver:</strong> L298N dual H-bridge motor driver for controlling DC motors</li>
+        <li><strong>Chassis & Controller Housing:</strong> Designed in <strong>SolidWorks</strong> and 3D printed for lightweight strength and precise fit</li>
+        <li><strong>Wireless Control:</strong> Communication module for remote operation</li>
+        <li><strong>Object Detection:</strong> Distance-based sensors integrated for obstacle avoidance</li>
+        <li><strong>Power Management:</strong> Designed for efficient current distribution and protection</li>
+    </ul>
+
+    <h2>Challenges</h2>
+    <ul>
+        <li>Balancing weight and stability in the SolidWorks-designed chassis</li>
+        <li>Designing a compact PCB that fit within the controller housing</li>
+        <li>Ensuring reliable motor driver performance under load</li>
+        <li>Integrating wireless control without interference</li>
+    </ul>
+
+    <h2>Learning Outcomes</h2>
+    <ul>
+        <li>Hands-on experience with PCB design and layout (signal routing, motor driver integration)</li>
+        <li>Practical understanding of embedded C programming for motor control</li>
+        <li>CAD design in <strong>SolidWorks</strong> for chassis and housing</li>
+        <li>Mechanical design considerations for stability and durability</li>
+        <li>System integration: combining electronics, power, and mechanical systems in one platform</li>
+    </ul>
 
     <h2>Files</h2>
-    <a class="button" href="../files/FILE_NAME.zip">Download Files</a>
+    <a class="button" href="../files/rc_car_project.zip">Download Files</a>
 
     <p><a class="button" href="../index.html">← Back to Home</a></p>
 </main>
