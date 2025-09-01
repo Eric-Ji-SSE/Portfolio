@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PROJECT NAME</title>
+    <title>Breadboard Power Supply</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
@@ -53,6 +53,8 @@
 
         p { line-height: 1.5; color: #cccccc; }
 
+        ul { line-height: 1.6; color: #cccccc; }
+
         a.button {
             display: inline-block;
             margin-top: 20px;
@@ -72,21 +74,52 @@
 <body>
 
 <header>
-    <h1>PROJECT NAME</h1>
-    <p>Project Details</p>
+    <h1>Breadboard Power Supply</h1>
+    <p>A dual-output 5V/3.3V power supply for breadboard prototyping with LEDs and protection circuits.</p>
 </header>
 
 <main>
-    <img src="../images/IMAGE_FILE.jpg" alt="PROJECT NAME Image">
+    <img src="../images/breadboard_psu.jpg" alt="Breadboard Power Supply Image">
 
     <h2>Overview</h2>
-    <p>Write a detailed description of the project here. Include your goals, challenges, and what technologies or components you used.</p>
+    <p>
+        This breadboard power supply provides regulated **5V and 3.3V outputs** from a 6–12V DC input. 
+        It is designed for easy connection to standard breadboards, providing **reliable voltage, power indication, and output protection** for small electronic projects.
+    </p>
+
+    <h2>Project Details</h2>
+    <p>
+        The **5V output** uses an <strong>LM7805 linear regulator</strong> with input and output capacitors for stability, while the **3.3V output** is generated using an adjustable <strong>LM317 regulator</strong> with resistors setting the voltage to 3.3V. 
+        A <strong>power LED</strong> indicates when input power is present.  
+    </p>
+
+    <p>
+        The outputs are selectable via jumpers or connectors for use with **breadboards, jumper wires, or screw terminals**, allowing flexible prototyping setups. 
+        Short-circuit protection is implemented through careful regulator choice and design.
+    </p>
+
+    <h2>What I Learned</h2>
+    <ul>
+        <li><strong>Voltage Regulation:</strong> Implementing stable 5V and 3.3V outputs using LM7805 and LM317 regulators.</li>
+        <li><strong>Power Indication:</strong> Adding LEDs to show input power and output status for improved usability.</li>
+        <li><strong>Output Flexibility:</strong> Designing selectable outputs for breadboards, jumper wires, or terminals.</li>
+        <li><strong>Protection:</strong> Understanding how to include thermal and short-circuit protection through regulator choice and layout.</li>
+    </ul>
+
+    <h2>Summary of Features</h2>
+    <ul>
+        <li>Input: 6–12V DC</li>
+        <li>Outputs: 5V regulated, 3.3V regulated</li>
+        <li>Indicators: Power LED for input</li>
+        <li>Selectable Outputs: Breadboard, jumper wires, screw terminals</li>
+        <li>Protection: Linear regulator-based short-circuit and thermal protection</li>
+        <li>Compact design for breadboard compatibility</li>
+    </ul>
 
     <h2>Files</h2>
-    <a class="button" href="../files/FILE_NAME.zip">Download Files</a>
+    <a class="button" href="../files/breadboard_psu_files.zip">Download Files</a>
 
     <p><a class="button" href="../index.html">← Back to Home</a></p>
 </main>
 
 </body>
-</html>
